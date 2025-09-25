@@ -4,6 +4,15 @@ Docker container for running Google Cloud Firestore emulator locally. Built out 
 
 This container will remain up to date since it uses the maintained google cloud cli image for emulators. See [here](https://cloud.google.com/sdk/docs/downloads-docker).
 
+## Docker Hub
+
+Available on Docker Hub: [pedr0sorio99/google-cloud-firestore-emulator](https://hub.docker.com/r/pedr0sorio99/google-cloud-firestore-emulator)
+
+```bash
+# Pull and run directly from Docker Hub
+docker run -p 8080:8080 -e FIRESTORE_PROJECT_ID=your-project-id pedr0sorio99/google-cloud-firestore-emulator
+```
+
 ## Quick Start
 
 ```bash
@@ -31,3 +40,24 @@ Or in Python:
 import os
 os.environ["FIRESTORE_EMULATOR_HOST"] = "localhost:8080"
 ```
+
+## Publishing
+
+To publish this image to Docker Hub with AMD64 architecture:
+
+```bash
+# Build for AMD64 architecture
+docker build --platform linux/amd64 -t pedr0sorio99/google-cloud-firestore-emulator:latest .
+
+# Tag with version
+docker tag pedr0sorio99/google-cloud-firestore-emulator:latest pedr0sorio99/google-cloud-firestore-emulator:1.0.0
+
+# Login to Docker Hub
+docker login
+
+# Push both tags
+docker push pedr0sorio99/google-cloud-firestore-emulator:latest
+docker push pedr0sorio99/google-cloud-firestore-emulator:1.0.0
+```
+
+**Note:** Use `docker build` (not `docker buildx`) to avoid potential certificate issues with custom builders.
