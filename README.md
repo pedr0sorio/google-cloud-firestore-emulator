@@ -1,6 +1,8 @@
 # Firestore Emulator
 
-Docker container for running Google Cloud Firestore emulator locally. Built out of necessity because https://hub.docker.com/r/mtlynch/firestore-emulator-docker, https://hub.docker.com/r/mtlynch/firestore-emulator/tags and https://github.com/PathMotion/firestore-emulator-docker did not work for my set up. They were likely using outdated base Google Cloud SDK images.
+Docker container for running Google Cloud Firestore emulator locally. Built out of necessity because [mtlynch/firestore-emulator-docker](https://hub.docker.com/r/mtlynch/firestore-emulator-docker), [mtlynch/firestore-emulator](https://hub.docker.com/r/mtlynch/firestore-emulator/tags) and [PathMotion/firestore-emulator-docker](https://github.com/PathMotion/firestore-emulator-docker) did not work for my set up. They were likely using outdated base Google Cloud SDK images.
+
+This container will remain up to date since it uses the maintained google cloud cli image for emulators. See [here](https://cloud.google.com/sdk/docs/downloads-docker).
 
 ## Quick Start
 
